@@ -1,26 +1,26 @@
-# Inventory Management System
-Amzing Project on Management System
-Check Demo Here : https://www.youtube.com/watch?v=9UZM8MmY1T8
+# Sistema de gerenciamento de estoque
+Projeto Incrível em Sistema de Gestão
+Verifique a demonstração aqui (Em Ingles): https://www.youtube.com/watch?v=9UZM8MmY1T8
 
--Open source inventory management system with php and mysql
+-Sistema de gerenciamento de inventário de código aberto com php e mysql
 
--Invoice generation and easy to download invoice in PDF format
+-Geração de faturas e fatura fácil de baixar em formato PDF
 
--Lightweight and easy to use
+-Leve e fácil de usar
 
--Order management and product management can be done with ease
+-O gerenciamento de pedidos e o gerenciamento de produtos podem ser feitos com facilidade
 
--Report management
+-Gerenciamento de relatórios
 
--User wise sell report.
+-Relatório de venda inteligente do usuário.
 
-# Requirement
+# Requerimento
 
 ```
-Need to change
+Precisa mudar
 store_url in db_connect.php
 
-Login Credentials
+Credenciais de login
 Id : admin
 password : admin
 ```
