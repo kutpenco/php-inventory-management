@@ -1,7 +1,7 @@
 <?php 	
 
 $localhost = "localhost";
-$username = "storetest";
+$username = "storetst";
 $password = "StoreTest231";
 $dbname = "store";
 $store_url = "http://localhost/php-inventory-management-system/";

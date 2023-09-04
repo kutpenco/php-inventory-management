@@ -31,7 +31,7 @@ CREATE TABLE `brands` (
   `brand_name` varchar(255) NOT NULL,
   `brand_active` int(11) NOT NULL DEFAULT '0',
   `brand_status` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -44,7 +44,7 @@ CREATE TABLE `categories` (
   `categories_name` varchar(255) NOT NULL,
   `categories_active` int(11) NOT NULL DEFAULT '0',
   `categories_status` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -70,7 +70,7 @@ CREATE TABLE `orders` (
   `gstn` varchar(255) NOT NULL,
   `order_status` int(11) NOT NULL DEFAULT '0',
   `user_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -86,7 +86,7 @@ CREATE TABLE `order_item` (
   `rate` varchar(255) NOT NULL,
   `total` varchar(255) NOT NULL,
   `order_item_status` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -102,9 +102,22 @@ CREATE TABLE `product` (
   `categories_id` int(11) NOT NULL,
   `quantity` varchar(255) NOT NULL,
   `rate` varchar(255) NOT NULL,
-  `active` int(11) NOT NULL DEFAULT '0',
+  `package_height` int(6) NOT NULL,
+  `package_width` int(6) NOT NULL,
+  `depth_pack` int(6) NOT NULL,
+  `weight` int(6) NOT NULL,
+  `publication_year` int(4),
+  `brand` varchar(75),
+  `publishing_company` varchar(75),
+  `ISBN` varchar(25),
+  `ISBN-10` varchar(25),
+  `ISBN-13` varchar(25),
+  `cover_type` varchar(15),
+  `SKU` varchar(15),
+  `description` varchar(255),
+  `active` boolean NOT NULL DEFAULT 'T',
   `status` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -117,7 +130,7 @@ CREATE TABLE `users` (
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8_general_ci;
 
 --
 -- Dumping data for table `users`
