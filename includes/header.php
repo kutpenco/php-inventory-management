@@ -4,7 +4,7 @@
 <html>
 <head>
 
-	<title>Stock Management System</title>
+	<title>Sistema de Manutenção de Estoque</title>
 
 	<!-- bootstrap -->
 	<link rel="stylesheet" href="assests/bootstrap/css/bootstrap.min.css">
@@ -57,13 +57,13 @@
       <ul class="nav navbar-nav navbar-right">        
 
       	<li id="navDashboard"><a href="index.php"><i class="glyphicon glyphicon-list-alt"></i>  Dashboard</a></li>        
-        <?php if(isset($_SESSION['userId']) && $_SESSION['userId']==1) { ?>
+        <?php if(isset($_SESSION['userId']) && $_SESSION['level']==1) { ?>
         <li id="navBrand"><a href="brand.php"><i class="glyphicon glyphicon-btc"></i>  Brand</a></li>        
 		<?php } ?>
-		<?php if(isset($_SESSION['userId']) && $_SESSION['userId']==1) { ?>
+		<?php if(isset($_SESSION['userId']) && $_SESSION['level']==1) { ?>
         <li id="navCategories"><a href="categories.php"> <i class="glyphicon glyphicon-th-list"></i> Category</a></li>        
 		<?php } ?>
-		<?php if(isset($_SESSION['userId']) && $_SESSION['userId']==1) { ?>
+		<?php if(isset($_SESSION['userId']) && $_SESSION['level']==1) { ?>
         <li id="navProduct"><a href="product.php"> <i class="glyphicon glyphicon-ruble"></i> Product </a></li> 
 		<?php } ?>
 		
@@ -75,16 +75,16 @@
           </ul>
         </li> 
 		
-		<?php  if(isset($_SESSION['userId']) && $_SESSION['userId']==1) { ?>
+		<?php  if(isset($_SESSION['userId']) && $_SESSION['level']==1) { ?>
         <li id="navReport"><a href="report.php"> <i class="glyphicon glyphicon-check"></i> Report </a></li>
 		<?php } ?> 
-    <?php  if(isset($_SESSION['userId']) && $_SESSION['userId']==1) { ?>
+    <?php  if(isset($_SESSION['userId']) && $_SESSION['level']==1) { ?>
         <li id="importbrand"><a href="importbrand.php"> <i class="glyphicon glyphicon-check"></i> Import Brand </a></li>
 		<?php } ?>   
         <li class="dropdown" id="navSetting">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="glyphicon glyphicon-user"></i> <span class="caret"></span></a>
           <ul class="dropdown-menu">    
-			<?php if(isset($_SESSION['userId']) && $_SESSION['userId']==1) { ?>
+			<?php if(isset($_SESSION['userId']) && $_SESSION['level']==1) { ?>
             <li id="topNavSetting"><a href="setting.php"> <i class="glyphicon glyphicon-wrench"></i> Setting</a></li>
             <li id="topNavUser"><a href="user.php"> <i class="glyphicon glyphicon-wrench"></i> Add User</a></li>
 <?php } ?>              

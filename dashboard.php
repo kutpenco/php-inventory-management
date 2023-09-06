@@ -40,7 +40,7 @@ $connect->close();
 
 
 <div class="row">
-	<?php  if(isset($_SESSION['userId']) && $_SESSION['userId']==1) { ?>
+	<?php  if(isset($_SESSION['userId']) && $_SESSION['level']==1) { ?>
 	<div class="col-md-4">
 		<div class="panel panel-success">
 			<div class="panel-heading">
@@ -110,7 +110,7 @@ $connect->close();
 
 	</div>
 	
-	<?php  if(isset($_SESSION['userId']) && $_SESSION['userId']==1) { ?>
+	<?php  if(isset($_SESSION['userId']) && $_SESSION['level']==1) { ?>
 	<div class="col-md-8">
 		<div class="panel panel-default">
 			<div class="panel-heading"> <i class="glyphicon glyphicon-calendar"></i> User Wise Order</div>

@@ -10,6 +10,10 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "-03:00";
 
+DROP DATABASE store;
+CREATE DATABASE store;
+USE store;
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -31,7 +35,7 @@ CREATE TABLE `brands` (
   `brand_name` varchar(255) NOT NULL,
   `brand_active` int(11) NOT NULL DEFAULT '0',
   `brand_status` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -44,7 +48,7 @@ CREATE TABLE `categories` (
   `categories_name` varchar(255) NOT NULL,
   `categories_active` int(11) NOT NULL DEFAULT '0',
   `categories_status` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -53,7 +57,7 @@ CREATE TABLE `categories` (
 --
 
 CREATE TABLE `orders` (
-  `order_id` int(11) NOT NULL,
+  `order_id` BINARY(16) NOT NULL,
   `order_date` date NOT NULL,
   `client_name` varchar(255) NOT NULL,
   `client_contact` varchar(255) NOT NULL,
@@ -70,7 +74,7 @@ CREATE TABLE `orders` (
   `gstn` varchar(255) NOT NULL,
   `order_status` int(11) NOT NULL DEFAULT '0',
   `user_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -79,14 +83,14 @@ CREATE TABLE `orders` (
 --
 
 CREATE TABLE `order_item` (
-  `order_item_id` int(11) NOT NULL,
+  `order_item_id` BINARY(16) NOT NULL,
   `order_id` int(11) NOT NULL DEFAULT '0',
   `product_id` int(11) NOT NULL DEFAULT '0',
   `quantity` varchar(255) NOT NULL,
   `rate` varchar(255) NOT NULL,
   `total` varchar(255) NOT NULL,
   `order_item_status` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -95,7 +99,7 @@ CREATE TABLE `order_item` (
 --
 
 CREATE TABLE `product` (
-  `product_id` int(11) NOT NULL,
+  `product_id` BINARY(16) NOT NULL,
   `product_name` varchar(255) NOT NULL,
   `product_image` text NOT NULL,
   `brand_id` int(11) NOT NULL,
@@ -115,9 +119,9 @@ CREATE TABLE `product` (
   `cover_type` varchar(15),
   `SKU` varchar(15),
   `description` varchar(255),
-  `active` boolean NOT NULL DEFAULT 'T',
+  `active` boolean NOT NULL DEFAULT '1',
   `status` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -126,18 +130,20 @@ CREATE TABLE `product` (
 --
 
 CREATE TABLE `users` (
-  `user_id` int(11) NOT NULL,
+  `user_id` BINARY(16) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
+  `level` TINYINT NOT NULL,
+  `partner`BINARY(16),
   `email` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `username`, `password`, `email`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', '');
+INSERT INTO `users` (`user_id`, `username`, `password`, `level`, `partner`, `email`) VALUES
+(UUID_TO_BIN(UUID()), 'admin', '21232f297a57a5a743894a0e4a801fc3', '1', '1', 'contato@madrugas.com.br');
 
 --
 -- Indexes for dumped tables
@@ -211,8 +217,7 @@ ALTER TABLE `product`
 --
 -- AUTO_INCREMENT for table `users`
 --
-ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

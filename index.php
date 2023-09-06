@@ -35,9 +35,11 @@ if($_POST) {
 			if($mainResult->num_rows == 1) {
 				$value = $mainResult->fetch_assoc();
 				$user_id = $value['user_id'];
+				$level = $value['level'];
 
 				// set session
 				$_SESSION['userId'] = $user_id;
+				$_SESSION['level'] = $level;
 
 				header('location:'.$store_url.'dashboard.php');	
 			} else{
