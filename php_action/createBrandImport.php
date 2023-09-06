@@ -39,24 +39,24 @@ if($_FILES) {
 						$sql = "INSERT INTO brands (brand_name, brand_active, brand_status) VALUES ('$value[0]', '$value[1]', '$value[1]')";
 							if($connect->query($sql) === TRUE) {
 								$valid['success'] = true;
-								$valid['messages'] = "Successfully Added";
+								$valid['messages'] = "Marcas importadas com sucesso.";
 							} else {
 								$valid['success'] = false;
-								$valid['messages'] = "Error while adding the brands";
+								$valid['messages'] = "Erro ao criar lote de Marcas.";
 							}
 						} else {
 							$valid['success'] = true;
-							$valid['messages'] = "Successfully Added";
+							$valid['messages'] = "Marcas importadas com sucesso.";
 						}
 					}
 				}
 			} else {
 				$valid['success'] = false;
-					$valid['messages'] = "Error while adding the brands";
+					$valid['messages'] = "Erro ao criar lote de Marcas.";
 			}	// /else	
 		} else {
 			$valid['success'] = false;
-			$valid['messages'] = "Error while adding the brands";
+			$valid['messages'] = "Erro ao criar lote de Marcas.";
 		} // if
 	} // if in_array 		
 

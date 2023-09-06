@@ -63,7 +63,7 @@ if($_POST) {
 	} // /for quantity
 
 	$valid['success'] = true;
-	$valid['messages'] = "Successfully Added";		
+	$valid['messages'] = "Ordem criada com sucesso.";		
 	
 	$connect->close();
 

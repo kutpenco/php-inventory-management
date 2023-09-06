@@ -19,10 +19,10 @@ if($_POST) {
 
 	if($connect->query($sql) === TRUE) {
 		$valid['success'] = true;
-		$valid['messages'] = "Successfully Update";	
+		$valid['messages'] = "Pagamento atualizado com sucesso.";	
 	} else {
 		$valid['success'] = false;
-		$valid['messages'] = "Error while updating product info";
+		$valid['messages'] = "Erro ao atualizar o pagamento.";
 	}
 
 	 

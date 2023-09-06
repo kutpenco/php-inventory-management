@@ -26,10 +26,10 @@ if($_POST) {
 
 				if($connect->query($sql) === TRUE) {
 					$valid['success'] = true;
-					$valid['messages'] = "Successfully Added";	
+					$valid['messages'] = "Produto adicionado com sucesso.";	
 				} else {
 					$valid['success'] = false;
-					$valid['messages'] = "Error while adding the members";
+					$valid['messages'] = "Erro ao adicionar o produto.";
 				}
 
 			}	else {

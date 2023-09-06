@@ -14,10 +14,10 @@ if($_POST) {
 
 	if($connect->query($sql) === TRUE) {
 	 	$valid['success'] = true;
-		$valid['messages'] = "Successfully Updated";	
+		$valid['messages'] = "Categoria altarada com sucesso.";	
 	} else {
 	 	$valid['success'] = false;
-	 	$valid['messages'] = "Error while updating the categories";
+	 	$valid['messages'] = "Erro ao alterar a categoria.";
 	}
 	 
 	$connect->close();

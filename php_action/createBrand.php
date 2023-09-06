@@ -13,10 +13,10 @@ if($_POST) {
 
 	if($connect->query($sql) === TRUE) {
 	 	$valid['success'] = true;
-		$valid['messages'] = "Successfully Added";	
+		$valid['messages'] = "Marca criada com sucesso.";	
 	} else {
 	 	$valid['success'] = false;
-	 	$valid['messages'] = "Error while adding the members";
+	 	$valid['messages'] = "Erro ao criar marca.";
 	}
 	 
 

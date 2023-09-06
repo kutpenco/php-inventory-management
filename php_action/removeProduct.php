@@ -13,10 +13,10 @@ if($productId) {
 
  if($connect->query($sql) === TRUE) {
  	$valid['success'] = true;
-	$valid['messages'] = "Successfully Removed";		
+	$valid['messages'] = "Produto removido com sucesso.";		
  } else {
  	$valid['success'] = false;
- 	$valid['messages'] = "Error while remove the brand";
+ 	$valid['messages'] = "Erro ao remover produto.";
  }
  
  $connect->close();

@@ -24,26 +24,26 @@ if($result->num_rows > 0) {
 
  	// active 
  	if($row[4] == 1) { 		
- 		$paymentStatus = "<label class='label label-success'>Full Payment</label>";
+ 		$paymentStatus = "<label class='label label-success'>Total</label>";
  	} else if($row[4] == 2) { 		
- 		$paymentStatus = "<label class='label label-info'>Advance Payment</label>";
+ 		$paymentStatus = "<label class='label label-info'>Pagamento adiantado</label>";
  	} else { 		
- 		$paymentStatus = "<label class='label label-warning'>No Payment</label>";
+ 		$paymentStatus = "<label class='label label-warning'>Sem pagamento</label>";
  	} // /else
 
  	$button = '<!-- Single button -->
 	<div class="btn-group">
 	  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	    Action <span class="caret"></span>
+	    Ação <span class="caret"></span>
 	  </button>
 	  <ul class="dropdown-menu">
-	    <li><a href="orders.php?o=editOrd&i='.$orderId.'" id="editOrderModalBtn"> <i class="glyphicon glyphicon-edit"></i> Edit</a></li>
+	    <li><a href="orders.php?o=editOrd&i='.$orderId.'" id="editOrderModalBtn"> <i class="glyphicon glyphicon-edit"></i> Editar</a></li>
 	    
-	    <li><a type="button" data-toggle="modal" id="paymentOrderModalBtn" data-target="#paymentOrderModal" onclick="paymentOrder('.$orderId.')"> <i class="glyphicon glyphicon-save"></i> Payment</a></li>
+	    <li><a type="button" data-toggle="modal" id="paymentOrderModalBtn" data-target="#paymentOrderModal" onclick="paymentOrder('.$orderId.')"> <i class="glyphicon glyphicon-save"></i> Pagamento</a></li>
 
-	    <li><a type="button" onclick="printOrder('.$orderId.')"> <i class="glyphicon glyphicon-print"></i> Print </a></li>
+	    <li><a type="button" onclick="printOrder('.$orderId.')"> <i class="glyphicon glyphicon-print"></i> Imprimir </a></li>
 	    
-	    <li><a type="button" data-toggle="modal" data-target="#removeOrderModal" id="removeOrderModalBtn" onclick="removeOrder('.$orderId.')"> <i class="glyphicon glyphicon-trash"></i> Remove</a></li>       
+	    <li><a type="button" data-toggle="modal" data-target="#removeOrderModal" id="removeOrderModalBtn" onclick="removeOrder('.$orderId.')"> <i class="glyphicon glyphicon-trash"></i> Remover</a></li>       
 	  </ul>
 	</div>';		
 

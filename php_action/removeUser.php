@@ -13,10 +13,10 @@ if($userid) {
 
  if($connect->query($sql) === TRUE) {
  	$valid['success'] = true;
-	$valid['messages'] = "Successfully Removed";		
+	$valid['messages'] = "Usuario removido com sucesso.";		
  } else {
  	$valid['success'] = false;
- 	$valid['messages'] = "Error while remove the user";
+ 	$valid['messages'] = "Erro ao remover usuario.";
  }
  
  $connect->close();

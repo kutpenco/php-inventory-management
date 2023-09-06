@@ -15,10 +15,10 @@ if($_POST) {
 				VALUES ('$userName', '$upassword' , '$uemail')";
 				if($connect->query($sql) === TRUE) {
 					$valid['success'] = true;
-					$valid['messages'] = "Successfully Added";	
+					$valid['messages'] = "Usuario criado com sucesso.";	
 				} else {
 					$valid['success'] = false;
-					$valid['messages'] = "Error while adding the members";
+					$valid['messages'] = "Erro ao criar usuario.";
 				}
 
 				// /else	
@@ -28,4 +28,3 @@ if($_POST) {
 	$connect->close();
 
 	echo json_encode($valid);
- 

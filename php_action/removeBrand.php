@@ -13,10 +13,10 @@ if($brandId) {
 
  if($connect->query($sql) === TRUE) {
  	$valid['success'] = true;
-	$valid['messages'] = "Successfully Removed";		
+	$valid['messages'] = "Marca removida com sucesso.";		
  } else {
  	$valid['success'] = false;
- 	$valid['messages'] = "Error while remove the brand";
+ 	$valid['messages'] = "Erro ao remover marca.";
  }
  
  $connect->close();
